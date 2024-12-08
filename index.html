@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة البحث عن الهدية</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            background: linear-gradient(to bottom, #f7f7f7, #d41f1f);
+            color: #2e8b57;
+        }
+
+        header {
+            background-color: #2e8b57;
+            padding: 20px 0;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 5px solid #d41f1f;
+        }
+
+        form {
+            margin-top: 50px;
+            display: inline-block;
+            padding: 20px;
+            background: white;
+            border: 3px solid #2e8b57;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #d41f1f;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e5f3c;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #clue-box {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background: white;
+            border: 3px solid #d41f1f;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            color: #2e8b57;
+            font-weight: bold;
+        }
+
+        #error {
+            margin-top: 20px;
+            color: #d41f1f;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background: #2e8b57;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        🎄 رحلة البحث عن الهدية 🎁
+    </header>
+
+    <h1>مرحباً بك في مغامرتك يا يحيى! 🎅</h1>
+    <p>للبدء، أدخل اسمك والرمز السري أدناه:</p>
+
+    <form id="secretSantaForm">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+        <label for="code">الرمز السري:</label>
+        <input type="text" id="code" name="code" placeholder="أدخل الرمز السري" required>
+        <button type="button" onclick="validate()">إرسال</button>
+    </form>
+
+    <div id="clue-box" class="hidden">
+        🎉 تهانينا! أول دليل لك هو:<br>
+        <p style="line-height: 1.8;">
+            في مكتبة الكتب ستجد الطريق<br>
+            خلف لوحة الجمال العتيق<br>
+            بين الرفوف وبهدوء المكان<br>
+            الموناليزا تحمل لك الأمان<br>
+        </p>
+    </div>
+    <p id="error" class="hidden">🎅 عذراً، المعلومات غير صحيحة. تحقق من الاسم والرمز!</p>
+
+    <footer>
+        🎄 عيد ميلاد مجيد وحظ سعيد! 🎁
+    </footer>
+
+    <script>
+        function validate() {
+            const name = document.getElementById("name").value.trim();
+            const code = document.getElementById("code").value.trim();
+            const clueBox = document.getElementById("clue-box");
+            const error = document.getElementById("error");
+
+            if (name === "يحيى" && code === "6177") {
+                clueBox.classList.remove("hidden");
+                error.classList.add("hidden");
+            } else {
+                clueBox.classList.add("hidden");
+                error.classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+
+</html>
